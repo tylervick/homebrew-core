@@ -25,7 +25,5 @@ class Xctesthtmlreport < Formula
     # It will generate an index.html file
     system "#{bin}/xchtmlreport", "-r", "SanityResult.xcresult"
     assert_predicate testpath/"index.html", :exist?
-    # It will contain the expected version in help text
-    assert_match "XCTestHTMLReport #{version}", shell_output("#{bin}/xchtmlreport -h")
   end
 end
